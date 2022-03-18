@@ -1,0 +1,62 @@
+{
+  "name": "radionautica-website-gatsby",
+  "private": false,
+  "description": "radionautica.net website source code.",
+  "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@types/qs": "^6.9.7",
+    "@types/styled-components": "^5.1.24",
+    "babel-plugin-styled-components": "^2.0.2",
+    "dayjs": "^1.10.8",
+    "gatsby": "^4.4.0",
+    "gatsby-plugin-image": "^2.9.0",
+    "gatsby-plugin-manifest": "^4.5.0",
+    "gatsby-plugin-react-helmet": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.9.0",
+    "gatsby-plugin-sitemap": "^5.5.0",
+    "gatsby-plugin-styled-components": "^5.4.0",
+    "gatsby-source-filesystem": "^4.9.0",
+    "gatsby-transformer-remark": "^5.9.0",
+    "gatsby-transformer-sharp": "^4.9.0",
+    "qs": "^6.10.3",
+    "react": "^17.0.1",
+    "react-datepicker": "^4.7.0",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.27.1",
+    "react-markdown": "^8.0.0",
+    "react-use-websocket": "^2.9.1",
+    "styled-components": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dead-ocean/radionautica-website-gatsby"
+  },
+  "bugs": {
+    "url": "https://github.com/dead-ocean/radionautica-website-gatsby/issues"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.29.3",
+    "standard": "^16.0.4"
+  }
+}

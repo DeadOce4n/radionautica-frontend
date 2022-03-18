@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: url('../fonts/PoppinsBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope.ttf') format('truetype'),
+    url('../fonts/Manrope.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'MOON GET!';
+    src: url('../fonts/MoonGet.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Darker Grotesque';
+    font-weight: 400;
+    src: url('../fonts/DarkerGrotesque-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Darker Grotesque';
+    font-weight: 700;
+    src: url('../fonts/DarkerGrotesque-Bold.ttf') format('truetype');
+}
+
+:root {
+    --font-primary: "Manrope", sans-serif;
+    --font-secondary: "Poppins", sans-serif;
+    --font-logo: "MOON GET!", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+    --font-player: "Darker Grotesque", monospace;
+    --color-fg-light: #144552;
+    --color-bg-light: hsl(175, 42%, 90%);
+    --color-bg-light-alt: hsl(175, 42%, 95%);
+    --color-fg-accent-light: #6a4c93;
+    --color-bg-dark: hsl(237, 95%, 8%);
+    --color-bg-dark-alt: hsl(237, 95%, 12%);
+    --color-fg-dark: hsl(0, 0%, 87%);
+    --color-fg-accent-dark: hsl(151, 72%, 68%);
+    font-size: 8px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+    height: 100%;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0; padding: 0; 
+    font: 500 2rem /1.6 "Manrope";
+    transition: background-color 0.2s, color 0.5s;
+}
+
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 2rem 0;
+    transition: color 0.5s;
+}
+
+p {
+    margin: 0 0 2rem 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.80em;
+    color: #03071e;
+    background-color: #ece4db;
+    padding: 2px 7px 3px;
+    border: 0px solid #ece4db;
+    border-radius: 7px;
+    white-space: nowrap;
+}
+
+pre {
+    background-color: #ece4db;
+    color: #03071e;
+    width: 100%;
+    padding: 0.3em 0.5em 0.7rem;
+    overflow: auto;
+    overflow-y: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gatsby-image-wrapper {
+    border-radius: 2rem;
+    margin: 0 0 2rem 0;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3));
+}
+
+@media only screen and (max-width: 40em) {
+    :root {
+        font-size: 8px;
+    }
+}
