@@ -19,6 +19,7 @@ const StyledNotification = styled.div`
   border-radius: 10px;
   color: var(--color-bg-${props => props.theme.theme});
   background-color: var(--color-fg-accent-${props => props.theme.theme});
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
   @media only screen and (min-width: 40em) {
     width: 40em;
     top: 4rem;
