@@ -127,17 +127,24 @@ export const createDjStrapiOnly = async ({
   avatar: File,
   token: string
 }) => {
+  const query = qs.stringify({
+    populate: 'avatar'
+  })
   const formData = new FormData()
   formData.append('data', JSON.stringify({ nick }))
   formData.append('files.avatar', avatar, avatar.name)
 
-  const response = await fetch(`${process.env.GATSBY_API_URL}/api/djs`, {
+  const response = await fetch(`${process.env.GATSBY_API_URL}/api/djs?${query}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: formData
   })
 
+  const data = await response.json()
+
   if (!response.ok) throw new Error(`An error ocurred: ${response.status}`)
+
+  return data.data.attributes.avatar.data.attributes.url
 }
 
 export const checkDjExistsOnStrapi = async (
@@ -157,7 +164,7 @@ export const checkDjExistsOnStrapi = async (
 
   const data = await response.json()
 
-  return { exists: data.data.length > 0, id: data.data[0].id }
+  return { exists: data.data.length > 0, id: data.data[0]?.id }
 }
 
 export const updateDj = async (

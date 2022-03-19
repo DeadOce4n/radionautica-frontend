@@ -145,16 +145,17 @@ const Djs = () => {
     const avatar = event.target.files[0]
     try {
       const djExistsOnStrapi = await checkDjExistsOnStrapi(nick)
+      let newAvatar
       if (!djExistsOnStrapi.exists) {
-        createDjStrapiOnly({ nick, avatar, token: user.token })
+        newAvatar = await createDjStrapiOnly({ nick, avatar, token: user.token })
       } else {
-        const newAvatar = await updateDjAvatar(djExistsOnStrapi.id, avatar, user.token)
-        const currentDjIndex = djs.findIndex(dj => dj.nick === nick)
-        const updatedDj = { ...djs[currentDjIndex], avatar: newAvatar }
-        const updatedDjs = [...djs]
-        updatedDjs.splice(currentDjIndex, 1, updatedDj)
-        setDjs(updatedDjs)
+        newAvatar = await updateDjAvatar(djExistsOnStrapi.id, avatar, user.token)
       }
+      const currentDjIndex = djs.findIndex(dj => dj.nick === nick)
+      const updatedDj = { ...djs[currentDjIndex], avatar: newAvatar }
+      const updatedDjs = [...djs]
+      updatedDjs.splice(currentDjIndex, 1, updatedDj)
+      setDjs(updatedDjs)
     } catch (e) {
       console.log(e)
     }
