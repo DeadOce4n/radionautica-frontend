@@ -35,8 +35,27 @@ const Tab = styled.button`
   }
 `
 
+const Placeholder = styled.div`
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 2rem 0 2rem 2rem;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+  color: var(--color-bg-${props => props.theme.theme});
+  background-color: var(--color-fg-accent-${props => props.theme.theme});
+  cursor: pointer;
+  font: 700 5rem var(--font-secondary);
+  padding: 3rem;
+`
+
 const TabbedIFrame = ({ sources, main }) => {
   const [visibleFrame, setVisibleFrame] = useState(sources.filter(src => src.name === main)[0])
+  const [frameIsVisible, setFrameIsVisible] = useState(false)
 
   const handleChangeSource = sourceName => {
     setVisibleFrame(sources.filter(src => src.name === sourceName)[0])
@@ -56,7 +75,11 @@ const TabbedIFrame = ({ sources, main }) => {
             </Tab>
           ))}
         </Tabs>
-        <ChatFrame src={visibleFrame.url} title={visibleFrame.name} />
+        <div onClick={() => setFrameIsVisible(true)}>
+          {frameIsVisible
+            ? <ChatFrame src={visibleFrame.url} title={visibleFrame.name} />
+            : <Placeholder><span>Haz click aquí para cargar el chat</span></Placeholder>}
+        </div>
       </Container>
     </>
   )
