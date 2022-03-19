@@ -75,11 +75,9 @@ const TabbedIFrame = ({ sources, main }) => {
             </Tab>
           ))}
         </Tabs>
-        <div onClick={() => setFrameIsVisible(true)}>
-          {frameIsVisible
-            ? <ChatFrame src={visibleFrame.url} title={visibleFrame.name} />
-            : <Placeholder><span>Haz click aquí para cargar el chat</span></Placeholder>}
-        </div>
+        {frameIsVisible
+          ? <ChatFrame src={visibleFrame.url} title={visibleFrame.name} frameBorder='0' />
+          : <Placeholder onClick={() => setFrameIsVisible(true)}><span>Haz click aquí para cargar el chat</span></Placeholder>}
       </Container>
     </>
   )
