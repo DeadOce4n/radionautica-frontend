@@ -33,7 +33,7 @@ const Edit = () => {
       setNotification({ message: 'Publicación borrada correctamente.', error: false })
       setTimeout(() => {
         setNotification({ message: '', error: false })
-      })
+      }, 3000)
     } catch (e) {
       console.log(e)
       setNotification({ message: 'Oops! Ocurrió un error 😔', error: true })
