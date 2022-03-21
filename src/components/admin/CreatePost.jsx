@@ -8,6 +8,7 @@ import Content from '../Content'
 import Form from '../form/Form'
 import Title from './Title'
 import dayjs from 'dayjs'
+import Seo from '../Seo'
 
 const CreatePost = () => {
   const currentDatetime = dayjs()
@@ -46,6 +47,7 @@ const CreatePost = () => {
 
   return (
     <>
+      <Seo title='Crear nueva publicación' />
       <Content className='narrow'>
         <Title backTo='/admin/posts' />
         <Form onSubmit={handleSubmit(onSubmit)} title='Crear nueva publicación'>

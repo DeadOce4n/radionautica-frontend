@@ -7,6 +7,7 @@ import Article from '../Article'
 import Button from '../Button'
 import Content from '../Content'
 import Title from './Title'
+import Seo from '../Seo'
 
 const ArticleButton = styled(Button)`
   font-size: 0.75em;
@@ -66,6 +67,7 @@ const Edit = () => {
 
   return (
     <>
+      <Seo title='Editar posts' />
       <Content className='narrow'>
         <Title title='Editar posts' backTo='/admin' />
         {posts.map(post => (

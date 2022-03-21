@@ -8,6 +8,7 @@ import Icofont from '../Icofont'
 import Loader from '../Loader'
 import Switch from './Switch'
 import Title from './Title'
+import Seo from '../Seo'
 
 const DjCardContainer = styled.section`
   display: flex;
@@ -194,6 +195,7 @@ const Djs = () => {
 
   return (
     <>
+      <Seo title='Gestionar DJs' />
       <Content className='narrow'>
         <Title title='Gestionar DJs' backTo='/admin' />
         <Controls>

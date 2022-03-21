@@ -8,6 +8,7 @@ import Content from '../Content'
 import Form from '../form/Form'
 import Title from './Title'
 import dayjs from 'dayjs'
+import Seo from '../Seo'
 
 const Post = ({ postId }) => {
   const { user, setNotification } = useContext(AppContext)
@@ -57,6 +58,7 @@ const Post = ({ postId }) => {
 
   return (
     <>
+      <Seo title='Editar post' />
       <Content className='narrow'>
         <Title backTo='/admin/posts' />
         <Form onSubmit={handleSubmit(onSubmit)} title='Editar post'>

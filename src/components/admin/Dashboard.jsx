@@ -6,6 +6,7 @@ import AppContext from '../AppContext'
 import Content from '../Content'
 import Icofont from '../Icofont'
 import Title from './Title'
+import Seo from '../Seo'
 
 const SectionContainer = styled.section`
   display: flex;
@@ -47,27 +48,30 @@ const Dashboard = () => {
   }
 
   return (
-    <Content className='narrow'>
-      <Title backTo='/' title={`Bienvenidx, ${context.user.nick}`} />
-      <p>
-        Aquí podrás crear registrar nuevos DJs para la radio y crear nuevas
-        entradas para el karaoke!
-      </p>
-      <SectionContainer>
-        <SectionCard onClick={() => navigate('/admin/djs')}>
-          <Icofont className='icofont-radio-mic icofont-4x' />
-          <span>Gestionar DJs</span>
-        </SectionCard>
-        <SectionCard onClick={() => navigate('/admin/posts')}>
-          <Icofont className='icofont-microphone icofont-4x' />
-          <span>Gestionar karaoke</span>
-        </SectionCard>
-        <SectionCard onClick={handleLogout}>
-          <Icofont className='icofont-exit icofont-4x' />
-          <span>Cerrar sesión</span>
-        </SectionCard>
-      </SectionContainer>
-    </Content>
+    <>
+      <Seo title='Panel de administración' />
+      <Content className='narrow'>
+        <Title backTo='/' title={`Bienvenidx, ${context.user.nick}`} />
+        <p>
+          Aquí podrás crear registrar nuevos DJs para la radio y crear nuevas
+          entradas para el karaoke!
+        </p>
+        <SectionContainer>
+          <SectionCard onClick={() => navigate('/admin/djs')}>
+            <Icofont className='icofont-radio-mic icofont-4x' />
+            <span>Gestionar DJs</span>
+          </SectionCard>
+          <SectionCard onClick={() => navigate('/admin/posts')}>
+            <Icofont className='icofont-microphone icofont-4x' />
+            <span>Gestionar karaoke</span>
+          </SectionCard>
+          <SectionCard onClick={handleLogout}>
+            <Icofont className='icofont-exit icofont-4x' />
+            <span>Cerrar sesión</span>
+          </SectionCard>
+        </SectionContainer>
+      </Content>
+    </>
   )
 }
 

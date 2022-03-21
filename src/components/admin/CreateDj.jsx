@@ -10,6 +10,7 @@ import Form from '../form/Form'
 import Icofont from '../Icofont'
 import Switch from './Switch'
 import Title from './Title'
+import Seo from '../Seo'
 
 const NarrowForm = styled(Form)`
   width: min(90%, 52rem);
@@ -105,6 +106,7 @@ const CreateDj = () => {
 
   return (
     <>
+      <Seo title='Registrar nuevo DJ' />
       <Content className='narrow '>
         <Title title='' backTo='/admin/djs' />
         <NarrowForm

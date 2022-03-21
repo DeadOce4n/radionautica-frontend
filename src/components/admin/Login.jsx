@@ -8,6 +8,7 @@ import Button from '../Button'
 import Content from '../Content'
 import Form from '../form/Form'
 import Title from './Title'
+import Seo from '../Seo'
 
 const LoginForm = styled(Form)`
   width: min(90%, 50rem);
@@ -58,6 +59,7 @@ const Login = () => {
 
   return (
     <>
+      <Seo title='Iniciar sesión' />
       <Content className='narrow'>
         <Title backTo='/' />
         <LoginForm onSubmit={handleSubmit(onSubmit)} title='Iniciar sesión'>
