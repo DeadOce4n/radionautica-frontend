@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
 
   const pages = [
     { name: 'Sólo escuchar', route: '/escuchar' },
-    // { name: 'Acerca', route: '/acerca' },
+    { name: 'Acerca', route: '/acerca' },
     { name: 'Karaoke', route: '/karaoke' }
     // { name: 'Horarios', route: '/horarios' }
   ]
