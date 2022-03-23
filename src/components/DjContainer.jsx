@@ -54,7 +54,12 @@ const DjContainer = () => {
   useEffect(() => {
     (async () => {
       const djs = await getDjs(process.env.GATSBY_RADIO_CLIENT_KEY)
-      setDjs(djs.filter(dj => dj.isActive))
+      const activeDjs = djs.filter(dj => dj.isActive)
+      if (activeDjs.some(dj => dj.avatar === null)) {
+        setDjs(activeDjs.sort((a, b) => Number(!!b.avatar) - Number(!!a.avatar)))
+      } else {
+        setDjs(activeDjs)
+      }
     })()
   }, [])
 
