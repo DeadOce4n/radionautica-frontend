@@ -3,6 +3,7 @@ import Article from '../components/Article'
 import Content from '../components/Content'
 import { getPosts } from '../services/posts'
 import AppContext from '../components/AppContext'
+import Seo from '../components/Seo'
 
 const Karaoke = () => {
   const [posts, setPosts] = useState([])
@@ -33,19 +34,25 @@ const Karaoke = () => {
   }
 
   return (
-    <Content className='narrow'>
-      <h1>Karaoke</h1>
-      {posts.map(post => (
-        <Article
-          key={post.id}
-          title={post.title}
-          date={post.date}
-          author={post.author}
-          content={post.content}
-          createdAt={post.createdAt}
-        />
-      ))}
-    </Content>
+    <>
+      <Seo
+        title='Karaoke'
+        description='Aquí podrás enterarte sobre las fechas de nuestro karaoke y leer sobre las ediciones anteriores'
+      />
+      <Content className='narrow'>
+        <h1>Karaoke</h1>
+        {posts.map(post => (
+          <Article
+            key={post.id}
+            title={post.title}
+            date={post.date}
+            author={post.author}
+            content={post.content}
+            createdAt={post.createdAt}
+          />
+        ))}
+      </Content>
+    </>
   )
 }
 
