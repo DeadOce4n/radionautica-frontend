@@ -26,10 +26,16 @@ const Karaoke = () => {
 
   if (posts.length === 0) {
     return (
-      <Content className='narrow'>
-        <h1>Karaoke</h1>
-        <p>Lo sentimos, aún no hay nada aquí 😔</p>
-      </Content>
+      <>
+        <Seo
+          title='Karaoke'
+          description='Aquí podrás enterarte sobre las fechas de nuestro karaoke y leer sobre las ediciones anteriores'
+        />
+        <Content className='narrow'>
+          <h1>Karaoke</h1>
+          <p>Lo sentimos, aún no hay nada aquí 😔</p>
+        </Content>
+      </>
     )
   }
 
