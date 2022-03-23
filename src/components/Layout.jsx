@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, a {
     color: var(--color-fg-accent-${props => props.theme.theme});
   }
+  pre, code {
+    color: var(--color-bg-${props => props.theme.theme});
+    background-color: var(--color-fg-${props => props.theme.theme});
+  }
 `
 
 const Layout = ({ children }) => {

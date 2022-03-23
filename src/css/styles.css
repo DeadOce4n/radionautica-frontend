@@ -85,17 +85,12 @@ a {
 code {
     font-family: var(--font-mono);
     font-size: 0.80em;
-    color: #03071e;
-    background-color: #ece4db;
     padding: 2px 7px 3px;
-    border: 0px solid #ece4db;
     border-radius: 7px;
     white-space: nowrap;
 }
 
 pre {
-    background-color: #ece4db;
-    color: #03071e;
     width: 100%;
     padding: 0.3em 0.5em 0.7rem;
     overflow: auto;
