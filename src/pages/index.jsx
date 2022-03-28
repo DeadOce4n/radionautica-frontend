@@ -6,7 +6,7 @@ import TabbedIFrame from '../components/TabbedIFrame'
 const Index = () => {
   const iframeSources = [
     { name: 'SupraChat', url: 'https://suprachat.net/webchat?channel=#radionautica,#chat' },
-    { name: 'ChatZona', url: 'https://chat.chatzona.org/index.html#nick=&channel=#radionautica,#chat' }
+    { name: 'ChatZona', url: 'https://chat.chatzona.org/index.html#nick=&channel=#radionautica,#hieloysal,#leon' }
   ]
   return (
     <>
