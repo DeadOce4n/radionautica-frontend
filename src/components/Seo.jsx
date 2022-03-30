@@ -31,6 +31,7 @@ const Seo = ({ title, description, image, titleTemplate }) => {
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />
       {seo.url && <meta property='og:url' content={seo.url} />}
+      {seo.url && <link rel='canonical' href={seo.url} />}
       {seo.title && <meta property='og:title' content={seo.title} />}
       {seo.description && (
         <meta property='og:description' content={seo.description} />
