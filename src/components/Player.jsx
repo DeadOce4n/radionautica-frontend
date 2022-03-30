@@ -3,6 +3,7 @@ import useWebSocket from 'react-use-websocket'
 import styled from 'styled-components'
 import AppContext from './AppContext'
 import Icofont from './Icofont'
+import { useLocation } from '@reach/router'
 
 const PlayerContainer = styled.div`
   display: flex;
@@ -13,7 +14,8 @@ const PlayerContainer = styled.div`
   align-self: flex-start;
   min-height: 64rem;
   width: 100%;
-  h1 {
+  h1, h2 {
+    font-size: 4rem;
     align-self: flex-start;
     padding: 3rem 3rem 0;
     margin: 0;
@@ -138,6 +140,8 @@ const Player = ({ radioUrl, socketUrl }) => {
     setSrcUrl
   } = useContext(AppContext)
 
+  const location = useLocation()
+
   useEffect(() => {
     if (!audioElement.current.paused) {
       setIsPlaying(true)
@@ -202,7 +206,7 @@ const Player = ({ radioUrl, socketUrl }) => {
   return (
     <>
       <PlayerContainer>
-        <h1>Radio</h1>
+        {location.pathname === '/' ? <h1>Radio</h1> : <h2>Radio</h2>}
         <AlbumArt>
           <img
             src={metadata.art}

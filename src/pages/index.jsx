@@ -11,7 +11,8 @@ const Index = () => {
   return (
     <>
       <Seo
-        titleTemplate='%s'
+        title='Radio en línea, escucha música y chatea GRATIS'
+        description='Escucha la mejor música y chatea gratis con gente de todo el mundo 🌐 Pide tus canciones favoritas 🎶 ! Navega con nosotros en un océano musical 🌊'
       />
       <Content>
         <TabbedIFrame sources={iframeSources} main='SupraChat' />
