@@ -1,23 +1,25 @@
-import React, { useState, useContext } from 'react'
 import { Link } from 'gatsby'
-import Nav from './styles.js'
 import PropTypes from 'prop-types'
-import AppContext from '../AppContext'
+import React, { useContext, useState } from 'react'
 import storageAvailable from '../../utils/storageAvailable'
-import NavbarLink from './NavbarLink'
+import AppContext from '../AppContext'
 import Icofont from '../Icofont'
 import LogoIcon from '../LogoIcon'
+import NavbarLink from './NavbarLink'
+import Nav from './styles.js'
+import { toggle, setTheme } from '../../slices/themeSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Navbar = ({ pages }) => {
-  const context = useContext(AppContext)
+  const dispatch = useDispatch()
+  const theme = useSelector(state => state.theme.value)
   const [visible, setVisible] = useState(false)
-  const toggleTheme = () => context.setTheme(context.theme === 'light' ? 'dark' : 'light')
 
   const handleToggle = () => {
-    toggleTheme()
+    dispatch(toggle())
     setVisible(!visible)
     if (storageAvailable('localStorage')) {
-      localStorage.setItem('theme', context.theme === 'light' ? 'dark' : 'light')
+      localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
     }
   }
 
@@ -41,7 +43,7 @@ const Navbar = ({ pages }) => {
       <Nav.Menu visible={visible}>
         {pages ? pages.map(page => <NavbarLink key={page.name} to={page.route} onClick={() => setVisible(!visible)}>{page.name}</NavbarLink>) : null}
         <Nav.ThemeButton onClick={handleToggle}>
-          <Icofont className={context.theme === 'dark' ? 'icofont-moon' : 'icofont-sun'} />
+          <Icofont className={theme === 'dark' ? 'icofont-moon' : 'icofont-sun'} />
         </Nav.ThemeButton>
       </Nav.Menu>
       <Nav.End visible={visible} />

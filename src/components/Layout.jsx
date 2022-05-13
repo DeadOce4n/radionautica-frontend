@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import '../css/normalize.css'
 import '../css/styles.css'
@@ -12,6 +13,7 @@ import Footer from './Footer'
 import Navbar from './navbar/Navbar'
 import Notification from './Notification'
 import Player from './Player'
+import { setTheme } from '../slices/themeSlice'
 
 const Sidebar = styled.div`
   display: flex;
@@ -39,7 +41,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState('dark')
+  // const [theme, setTheme] = useState('dark')
+  const theme = useSelector(state => state.theme.value)
+  const dispatch = useDispatch()
   const [srcUrl, setSrcUrl] = useState('')
   const audioElement = useRef(null)
   const [user, setUser] = useState({
@@ -55,7 +59,7 @@ const Layout = ({ children }) => {
     if (storageAvailable('localStorage')) {
       const storedTheme = window.localStorage.getItem('theme')
       if (storedTheme) {
-        setTheme(storedTheme)
+        dispatch(setTheme(storedTheme))
       }
       const storedUser = window.localStorage.getItem('user')
       if (storedUser) {
@@ -93,8 +97,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <AppContext.Provider value={{
-        theme,
-        setTheme,
         audioElement,
         srcUrl,
         setSrcUrl,

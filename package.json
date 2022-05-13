@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
     "@types/qs": "^6.9.7",
     "@types/styled-components": "^5.1.24",
     "babel-plugin-styled-components": "^2.0.2",
@@ -35,6 +36,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.27.1",
     "react-markdown": "^8.0.0",
+    "react-redux": "^8.0.1",
     "react-use-websocket": "^2.9.1",
     "styled-components": "^5.3.3"
   },
