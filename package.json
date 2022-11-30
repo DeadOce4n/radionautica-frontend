@@ -1,0 +1,67 @@
+{
+  "name": "radionautica-website-v2",
+  "version": "0.0.2",
+  "private": true,
+  "description": "radionautica-website-v2",
+  "author": "ThyDevourer <pedro@ivanpartida.xyz",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "GPL-3.0",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --fix src/**/*.{ts,tsx}",
+    "format": "prettier --write src/**/*.{ts,tsx}"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.18.0",
+    "@tanstack/react-query-devtools": "^4.19.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^5.2.0",
+    "gatsby-plugin-image": "^3.2.0",
+    "gatsby-plugin-manifest": "^5.2.0",
+    "gatsby-plugin-sharp": "^5.2.0",
+    "gatsby-plugin-sitemap": "^6.2.0",
+    "gatsby-plugin-styled-components": "^6.2.0",
+    "gatsby-source-filesystem": "^5.2.0",
+    "gatsby-transformer-sharp": "^5.2.0",
+    "lodash": "^4.17.21",
+    "notistack": "^2.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "remeda": "^1.3.0",
+    "styled-components": "^5.3.6",
+    "zustand": "^4.1.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "typescript": "^4.8.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.ts?(x)": "eslint --fix"
+  }
+}
